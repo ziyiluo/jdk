@@ -36,12 +36,14 @@ import java.security.spec.*;
  * @summary RsaPrivateKeySpec is always recognized as RSAPrivateCrtKeySpec in RSAKeyFactory.engineGetKeySpec
  * @author Greg Rubin, Ziyi Luo
  * @library /test/lib ..
+ * @run main/othervm TestP11KeyFactoryGetRSAKeySpec
+ * @run main/othervm TestP11KeyFactoryGetRSAKeySpec sm rsakeys.ks.policy
  * @modules jdk.crypto.cryptoki
  */
 
 public class TestP11KeyFactoryGetRSAKeySpec extends PKCS11Test {
     public static void main(String[] args) throws Exception {
-        main(new TestP11KeyFactoryGetRSAKeySpec());
+        main(new TestP11KeyFactoryGetRSAKeySpec(), args);
     }
 
     @Override
